@@ -5,6 +5,8 @@ import "antd/dist/antd.css";
 import LineChart from "./components/LineChart";
 import axios from "axios";
 import Returns from "./components/Returns";
+import Candlestick from "./components/Candlestick";
+import CandleWrapper from "./components/CandleWrapper";
 
 const baseURL = "https://7bsjtdr8bi.execute-api.ap-south-1.amazonaws.com/dev/";
 
@@ -77,6 +79,9 @@ function App() {
         </Tabs.TabPane>
         <Tabs.TabPane tab="Returns" key="item-2">
           <Returns />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab="Candlestick" key="item-3">
+          <CandleWrapper />
         </Tabs.TabPane>
       </Tabs>
     </div>
