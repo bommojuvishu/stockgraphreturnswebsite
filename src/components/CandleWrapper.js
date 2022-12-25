@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import Candlestick from "./Candlestick";
+import ApexChart from "./ApexChart";
 import { Input, Button, Spin, InputNumber } from "antd";
 import axios from "axios";
 
@@ -51,12 +52,12 @@ function CandleWrapper() {
       </Button>
       <Spin spinning={loading} size={"large"}></Spin>
       {Object.keys(responseui)?.map((item) => {
-        console.log(item);
+        console.log("MAPS stocks:", item);
 
         return (
           <span>
             <h2>{item}</h2>
-            <Candlestick
+            <ApexChart
               stocksdata={responseui[item]}
               periodinput={periodinput}
             />
