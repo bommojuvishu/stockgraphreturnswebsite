@@ -29,6 +29,8 @@ class ApexChart extends React.Component {
           type: "datetime",
         },
         yaxis: {
+          show: false,
+          decimalsInFloat: 1,
           tooltip: {
             enabled: true,
           },
