@@ -1,12 +1,13 @@
 import Chart from "react-apexcharts";
 import React from "react";
+import * as dayjs from "dayjs";
 
 class ApexChart extends React.Component {
   render() {
     let data_entry = this.props.stocksdata.map((item) => {
       let tmp = {};
       tmp = {
-        x: Date.parse(item["Date"]),
+        x: item["Date"],
         y: [item.open, item.high, item.low, item.close],
       };
       return tmp;
@@ -26,7 +27,12 @@ class ApexChart extends React.Component {
           align: "left",
         },
         xaxis: {
-          type: "datetime",
+          type: "category",
+          labels: {
+            formatter: function (val) {
+              return dayjs(val).format("MMM DD");
+            },
+          },
         },
         yaxis: {
           show: false,
